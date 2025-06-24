@@ -3,8 +3,12 @@
 
 #include <iostream>
 
-class Celula{
-
+class Celula {
+    private:
+        bool bomba;
+        bool aberto;
+        bool vizinhos;
+    
 };
 
 #endif //CELULA_H
