@@ -19,6 +19,13 @@ class Celula {
         //Retorna a quantidade de vizinhos
         int qntVizinhos();
 
+        //Adiciona uma bomba a célula
+        bool colocaBomba();
+        //Abre a célula
+        bool abrir();
+        //Insere a quantidade de vizinhos da célula
+        int colocaVizinhos(int qntV);
+
         //Destrutor
         ~Celula();
 };
