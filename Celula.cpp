@@ -18,13 +18,20 @@ int Celula::qntVizinhos() {
 }
 
 
-bool Celula::colocaBomba() {}
+bool Celula::colocaBomba() {
+    bomba = true;
+}
 
-bool Celula::abrir() {}
+bool Celula::abrir() {
+    aberto = true;
+}
 
-int Celula::colocaVizinhos(int qntV) {}
+int Celula::colocaVizinhos(int qntV) {
+    vizinhos = qntV;
+}
 
 
-Celula::~Celula() {}
+Celula::~Celula() {
+}
 
 
