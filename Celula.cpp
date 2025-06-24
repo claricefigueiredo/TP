@@ -1,14 +1,21 @@
 #include "Celula.h"
 
 
-Celula::Celula() {}
+Celula::Celula() : bomba(0), aberto(0), vizinhos(0) {
+}
 
 
-bool Celula::temBomba() {}
+bool Celula::temBomba() {
+    return bomba;
+}
 
-bool Celula::taAberto() {}
+bool Celula::taAberto() {
+    return aberto;
+}
 
-int Celula::qntVizinhos() {}
+int Celula::qntVizinhos() {
+    return vizinhos;
+}
 
 
 bool Celula::colocaBomba() {}
