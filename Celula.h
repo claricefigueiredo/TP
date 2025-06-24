@@ -7,7 +7,7 @@ class Celula {
     private:
         bool bomba;
         bool aberto;
-        bool vizinhos;
+        int vizinhos;
     public:
         //Cria uma célula sem bombas, fechada e com 0 vizinhos
         Celula();

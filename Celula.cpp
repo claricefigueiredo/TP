@@ -1,7 +1,7 @@
 #include "Celula.h"
 
 
-Celula::Celula() : bomba(0), aberto(0), vizinhos(0) {
+Celula::Celula() : bomba(false), aberto(false), vizinhos(0) {
 }
 
 
