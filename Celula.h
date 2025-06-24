@@ -12,6 +12,13 @@ class Celula {
         //Cria uma célula sem bombas, fechada e com 0 vizinhos
         Celula();
 
+        //Retorna se na célula tem uma bomba
+        bool temBomba();
+        //REtorna se a célula já foi aberta
+        bool taAberto();
+        //Retorna a quantidade de vizinhos
+        int qntVizinhos();
+
         //Destrutor
         ~Celula();
 };
