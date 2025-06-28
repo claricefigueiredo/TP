@@ -30,3 +30,13 @@ void Tabuleiro::sorteiaBombas(int n) {
 bool Tabuleiro::coordenadaValida(int linha, int coluna) {
     return (linha >= 0 && linha < 10 && coluna >= 0 && coluna < 10);
 }
+
+// Conta bombas nas 4 células vizinhas (cima, baixo, esquerda, direita)
+int Tabuleiro::contaBombaViz(int linha, int coluna) {
+    int quantidade = 0;
+    if(coordenadaValida(linha-1, coluna) && tabuleiro[linha-1][coluna].temBomba()) quantidade++;
+    if(coordenadaValida(linha+1, coluna) && tabuleiro[linha+1][coluna].temBomba()) quantidade++;
+    if(coordenadaValida(linha, coluna+1) && tabuleiro[linha][coluna+1].temBomba()) quantidade++;
+    if(coordenadaValida(linha, coluna-1) && tabuleiro[linha][coluna-1].temBomba()) quantidade++;
+    return quantidade;
+}
