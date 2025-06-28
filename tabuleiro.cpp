@@ -54,3 +54,26 @@ int Tabuleiro::insereBombasViz() {
     return totalBombas;
 }
 
+// Exibe o tabuleiro no console
+void Tabuleiro::imprimir() {
+    cout << "\n\n\t    ";
+    for(int l = 0; l < 10; l++)
+        cout << " " << l << "  ";
+    cout << "\n\t   -----------------------------------------\n";
+
+    for(int l = 0; l < 10; l++) {
+        cout << "\t" << l << "  |";
+        for(int c = 0; c < 10; c++) {
+            if(tabuleiro[l][c].estaAberta()) {
+                if(tabuleiro[l][c].temBomba())
+                    cout << " * ";
+                else
+                    cout << " " << tabuleiro[l][c].quantidadeVizinhos() << " ";
+            } else {
+                cout << "   ";
+            }
+            cout << "|";
+        }
+        cout << "\n\t   -----------------------------------------\n";
+    }
+}
