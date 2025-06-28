@@ -11,3 +11,17 @@ void Tabuleiro::iniciaTabuleiro() {
         }
     }
 }
+
+// Distribui n bombas aleatoriamente
+void Tabuleiro::sorteiaBombas(int n) {
+    int bombas = 0;
+    srand(time(NULL));
+    while(bombas < n) {
+        int l = rand() % 10;
+        int c = rand() % 10;
+        if(!tabuleiro[l][c].temBomba()) {
+            tabuleiro[l][c].colocarBomba();
+            bombas++;
+        }
+    }
+}
