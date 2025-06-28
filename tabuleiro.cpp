@@ -54,6 +54,26 @@ int Tabuleiro::insereBombasViz() {
     return totalBombas;
 }
 
+void Tabuleiro::abreZeros(int linha, int coluna) {
+    // Verifica se a coordenada é inválida, se já está aberta ou tem bomba
+    if(!coordenadaValida(linha, coluna) || 
+       tabuleiro[linha][coluna].estaAberta() || 
+       tabuleiro[linha][coluna].temBomba()) {
+        return;
+    }
+
+    // Abre a célula atual
+    tabuleiro[linha][coluna].abrir();
+
+    // Se não tem bombas vizinhas, abre recursivamente as adjacentes
+    if(tabuleiro[linha][coluna].quantidadeVizinhos() == 0) {
+        abreZeros(linha-1, coluna);  // Cima
+        abreZeros(linha+1, coluna);  // Baixo
+        abreZeros(linha, coluna-1);  // Esquerda
+        abreZeros(linha, coluna+1);  // Direita
+    }
+}
+
 // Exibe o tabuleiro no console
 void Tabuleiro::imprimir() {
     cout << "\n\n\t    ";
