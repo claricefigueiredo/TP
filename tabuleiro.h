@@ -1,48 +1,36 @@
 #ifndef TABULEIRO_H
 #define TABULEIRO_H
 
-#include <vector>
-#include "Celula.h"  // Incluindo o cabeçalho da celula.h pois interage com tabuleiro
+#include "Celula.h"
 
 class Tabuleiro {
 private:
-    std::vector<std::vector<Celula>> grade;  // Matriz de células que forma o tabuleiro
-    int tamanho;                             // Tamanho do tabuleiro (tamanho x tamanho)
-    int totalBombas;                         // Número total de bombas no tabuleiro
-
-    //Verifica se as coordenadas estão dentro dos limites do tabuleiro
-    bool coordenadaEhValida(int l, int c) const;
-    
-    //Conta quantas bombas existem nas células vizinhas à posição (l,c)
-    int contarBombasVizinhas(int l, int c) const;
-    
-    //Abre a célula e, se for vazia, abre recursivamente as vizinhas
-    void abrirCelulaRecursivo(int l, int c);
+    Celula tabuleiro[10][10];  // Matriz 10x10 que representa o tabuleiro
 
 public:
-    //Cria um tabuleiro com tamanho t e b bombas
-    Tabuleiro(int t, int b);
+    // Preenche todas as células do tabuleiro como vazias
+    void iniciaTabuleiro();
     
-    //Inicializa o tabuleiro: coloca bombas e calcula vizinhos
-    void inicializar();
+    // Distribui 'n' bombas em posições aleatórias
+    void sorteiaBombas(int n);
     
-    //Imprime o tabuleiro no console, mostrando células abertas
-    void imprimir() const;
+    // Verifica se a posição está dentro dos limites do tabuleiro
+    bool coordenadaValida(int linha, int coluna);
     
-    //Abre a célula na posição (l,c) (interface pública para a abertura)
-    void abrirCelula(int l, int c);
+    // Conta quantas bombas existem nas células vizinhas à posição informada
+    int contaBombaViz(int linha, int coluna);
     
-    //Retorna true se a célula (l,c) contém uma bomba
-    bool celulaTemBomba(int l, int c) const;
+    // Atualiza todas as células com a contagem de bombas vizinhas
+    int insereBombasViz();
     
-    //Retorna true se a célula (l,c) já foi aberta
-    bool celulaAberta(int l, int c) const;
+    // Abre células vazias adjacentes recursivamente (implementação no .cpp)
+    void abreZeros(int linha, int coluna);
     
-    //Verifica se o jogador ganhou (todas células sem bomba abertas)
-    bool ganhou() const;
+    // Exibe o tabuleiro atual no console
+    void imprimir();
     
-    //Verifica se as coordenadas (l,c) são válidas no tabuleiro
-    bool coordenadaValida(int l, int c) const;
+    // Retorna referência direta à célula na posição especificada
+    Celula& acessaCelula(int linha, int coluna);
 };
 
-#endif
+#endif // TABULEIRO_H
