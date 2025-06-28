@@ -77,3 +77,8 @@ void Tabuleiro::imprimir() {
         cout << "\n\t   -----------------------------------------\n";
     }
 }
+
+// Retorna referência a uma célula específica
+Celula& Tabuleiro::acessaCelula(int linha, int coluna) {
+    return tabuleiro[linha][coluna];
+}
