@@ -40,3 +40,17 @@ int Tabuleiro::contaBombaViz(int linha, int coluna) {
     if(coordenadaValida(linha, coluna-1) && tabuleiro[linha][coluna-1].temBomba()) quantidade++;
     return quantidade;
 }
+
+// Calcula bombas vizinhas para todas as células
+int Tabuleiro::insereBombasViz() {
+    int totalBombas = 0;
+    for(int l = 0; l < 10; l++) {
+        for(int c = 0; c < 10; c++) {
+            int vizinhos = contaBombaViz(l, c);
+            tabuleiro[l][c].definirVizinhos(vizinhos);
+            if(tabuleiro[l][c].temBomba()) totalBombas++;
+        }
+    }
+    return totalBombas;
+}
+
