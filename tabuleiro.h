@@ -13,3 +13,17 @@ private:
     bool coordenadaEhValida(int l, int c) const;
     int contarBombasVizinhas(int l, int c) const;
     void abrirCelulaRecursivo(int l, int c);
+
+
+public:
+    Tabuleiro(int t, int b);
+    void inicializar();
+    void imprimir() const;
+    void abrirCelula(int l, int c);
+    bool celulaTemBomba(int l, int c) const;
+    bool celulaAberta(int l, int c) const;
+    bool ganhou() const;
+    bool coordenadaValida(int l, int c) const;
+};
+
+#endif
