@@ -25,3 +25,8 @@ void Tabuleiro::sorteiaBombas(int n) {
         }
     }
 }
+
+// Verifica se a posição está dentro do tabuleiro
+bool Tabuleiro::coordenadaValida(int linha, int coluna) {
+    return (linha >= 0 && linha < 10 && coluna >= 0 && coluna < 10);
+}
