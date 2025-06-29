@@ -19,6 +19,13 @@ Este projeto é uma implementação do jogo **Campo Minado**, desenvolvida em **
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+## 🎮 Como Jogar
+- Insira as coordenadas da célula que você gostaria de revelar (no formato "linha coluna")
+- Caso apareça uma explosão (💥), você perdeu! Mas tem a chance de jogar novamente digitando 1
+- Caso apareça um número, significa que a célula está vazia
+- Cada número indica quantas minas estão ao redor - cima, baixo, direita, esquerda e diagonais imediatas - do bloco que contém o número
+- O jogo termina quando não houverem mais células vazias
+
 ## 📫 Como contribuir
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b nova-contribuicao`.
