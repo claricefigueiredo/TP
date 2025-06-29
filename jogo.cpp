@@ -3,7 +3,9 @@
 #include<string>
 using namespace std;
 Jogo::Jogo(){
-   
+   tabuleiro.iniciaTabuleiro();
+   tabuleiro.sorteiaBombas(20);
+    tabuleiro.insereBombasViz();
 }
 int Jogo::Venceu(){
   int quantidade = 0;
