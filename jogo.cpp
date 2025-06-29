@@ -42,6 +42,11 @@ int Jogo::Venceu(){
     
         }while(tabuleiro.coordenadaValida(linha-1, coluna-1) == false || tabuleiro.acessaCelula(linha-1,coluna-1).taAberto()==true);
 
+       if (!tabuleiro.acessaCelula(linha-1, coluna-1).temBomba() && 
+            tabuleiro.acessaCelula(linha-1, coluna-1).qntVizinhos() == 0) {
+            tabuleiro.abreZeros(linha-1, coluna-1);
+        }
+
        tabuleiro.acessaCelula(linha-1, coluna-1).abrir();
        if (tabuleiro.acessaCelula(linha - 1, coluna - 1).temBomba()) {
             perdeu = true;
