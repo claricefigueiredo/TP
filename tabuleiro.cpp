@@ -75,6 +75,10 @@ void Tabuleiro::abreZeros(int linha, int coluna) {
         abreZeros(linha+1, coluna);  // Baixo
         abreZeros(linha, coluna-1);  // Esquerda
         abreZeros(linha, coluna+1);  // Direita
+        abreZeros(linha-1, coluna-1);  // Diagonal Superior Esquerda
+        abreZeros(linha-1, coluna+1);  // Diagonal Superior Direita
+        abreZeros(linha+1, coluna-1);  // Diagonal Inferior Esquerda
+        abreZeros(linha+1, coluna+1);  // Diagonal Inferior Direita
     }
 }
 
