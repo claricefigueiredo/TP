@@ -38,6 +38,10 @@ int Tabuleiro::contaBombaViz(int linha, int coluna) {
     if(coordenadaValida(linha+1, coluna) && tabuleiro[linha+1][coluna].temBomba()) quantidade++;
     if(coordenadaValida(linha, coluna+1) && tabuleiro[linha][coluna+1].temBomba()) quantidade++;
     if(coordenadaValida(linha, coluna-1) && tabuleiro[linha][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha-1, coluna-1) && tabuleiro[linha-1][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha-1, coluna+1) && tabuleiro[linha-1][coluna+1].temBomba()) quantidade++;
+    if(coordenadaValida(linha+1, coluna-1) && tabuleiro[linha+1][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha+1, coluna+1) && tabuleiro[linha+1][coluna+1].temBomba()) quantidade++;
     return quantidade;
 }
 
