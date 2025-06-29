@@ -1,3 +1,6 @@
+
+![logo campo minado](https://github.com/user-attachments/assets/05982f64-c91b-42f1-95b2-2cd0baeac016)
+
 # TP
 Este projeto é uma implementação do jogo **Campo Minado**, desenvolvida em **C++**. O objetivo do jogo é desvendar um campo de células sem detonar nenhuma mina, com as dicas (número de minas ao redor da célula escolhida) que o jogo fornece.
 
