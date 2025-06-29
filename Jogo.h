@@ -12,7 +12,7 @@ public:
     //Controla o jogo lendo as entradas dos jogadores
     void jogo();
     //Verifica se há ganhador, se quantidade >0 não ganhou, senão, ganhou
-    int Vencer();
+    int Venceu();
 };
 
 #endif //JOGO_H
