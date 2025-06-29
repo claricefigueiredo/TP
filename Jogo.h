@@ -1,6 +1,6 @@
 #ifndef JOGO_H
 #define JOGO_H
-
+#include <string>
 #include "tabuleiro.h"
 #include <iostream>
 
@@ -11,7 +11,7 @@ private:
 public:
     Jogo();
     //Controla o jogo lendo as entradas dos jogadores
-    void play();
+   std:: string play();
     //Verifica se há ganhador, se quantidade >0 não ganhou, senão, ganhou
     int Venceu();
 };

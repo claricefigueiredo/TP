@@ -1,6 +1,7 @@
 #include"Jogo.h"
 #include<iostream>
 #include<string>
+#include <limits>
 using namespace std;
 Jogo::Jogo(){
    tabuleiro.iniciaTabuleiro();
@@ -20,27 +21,41 @@ int Jogo::Venceu(){
 }
 
 
- void Jogo::play(){
-     int linha, coluna;
 
+ string Jogo::play(){
+     int linha, coluna;
+    bool perdeu=false;
     do{
        tabuleiro.imprimir ();
         do{
             cout<< endl;
             cout<< "Digite as coordenadas de linha e coluna: ";
-            cin>> linha>> coluna>> endl;
-            
-            if(tabuleiro.coordenadaValida(linha, coluna) == false || tabuleiro.acessaCelula(linha,coluna).taAberto()==true)
+            cin>> linha>> coluna;
+            if(cin.fail()) {
+            cin.clear();
+           cin.ignore(numeric_limits<streamsize>::max(), '\n');
+           cout << "Entrada inválida! Digite dois números." << endl;
+           continue;
+            }
+            if(tabuleiro.coordenadaValida(linha-1, coluna-1) == false || tabuleiro.acessaCelula(linha-1,coluna-1).taAberto()==true)
                 cout<< endl<< "Coordenada inválida ou já está aberta" << endl;
-        }while(tabuleiro.coordenadaValida(linha, coluna) == false || tabuleiro.acessaCelula(linha,coluna).taAberto()==true);
+    
+        }while(tabuleiro.coordenadaValida(linha-1, coluna-1) == false || tabuleiro.acessaCelula(linha-1,coluna-1).taAberto()==true);
 
-       tabuleiro.acessaCelula(linha, coluna).abrir();
-    }while(Venceu() != 0 && tabuleiro.acessaCelula(linha,coluna).temBomba() == false);
+       tabuleiro.acessaCelula(linha-1, coluna-1).abrir();
+       if (tabuleiro.acessaCelula(linha - 1, coluna - 1).temBomba()) {
+            perdeu = true;
+        }
+       
 
-    if(tabuleiro.acessaCelula(linha,coluna).temBomba() == true)
-        cout<< endl<< "Voce perdeu!!! Mais sorte da próxima vez!!"<< endl;
-    else
-         cout<< endl<< "VOCÊ GANHOU!!! PARABÉNS!!"<< endl;
+       
+    }while(Venceu() != 0 && !perdeu);
 
+    
     tabuleiro.imprimir();
+     if(perdeu)
+        return "\nVoce perdeu!!! Mais sorte da próxima vez!!";
+        else
+         return "\nVOCÊ GANHOU!!! PARABÉNS!!";
 }
+

@@ -1,8 +1,8 @@
-#include "Tabuleiro.h"
+#include "tabuleiro.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
+using namespace std;
 // Inicializa todas as células como vazias
 void Tabuleiro::iniciaTabuleiro() {
     for(int l = 0; l < 10; l++) {
@@ -20,7 +20,7 @@ void Tabuleiro::sorteiaBombas(int n) {
         int l = rand() % 10;
         int c = rand() % 10;
         if(!tabuleiro[l][c].temBomba()) {
-            tabuleiro[l][c].colocarBomba();
+            tabuleiro[l][c].colocaBomba();
             bombas++;
         }
     }
@@ -47,7 +47,7 @@ int Tabuleiro::insereBombasViz() {
     for(int l = 0; l < 10; l++) {
         for(int c = 0; c < 10; c++) {
             int vizinhos = contaBombaViz(l, c);
-            tabuleiro[l][c].definirVizinhos(vizinhos);
+            tabuleiro[l][c].colocaVizinhos(vizinhos);
             if(tabuleiro[l][c].temBomba()) totalBombas++;
         }
     }
@@ -57,7 +57,7 @@ int Tabuleiro::insereBombasViz() {
 void Tabuleiro::abreZeros(int linha, int coluna) {
     // Verifica se a coordenada é inválida, se já está aberta ou tem bomba
     if(!coordenadaValida(linha, coluna) || 
-       tabuleiro[linha][coluna].estaAberta() || 
+       tabuleiro[linha][coluna].taAberto() || 
        tabuleiro[linha][coluna].temBomba()) {
         return;
     }
@@ -66,7 +66,7 @@ void Tabuleiro::abreZeros(int linha, int coluna) {
     tabuleiro[linha][coluna].abrir();
 
     // Se não tem bombas vizinhas, abre recursivamente as adjacentes
-    if(tabuleiro[linha][coluna].quantidadeVizinhos() == 0) {
+    if(tabuleiro[linha][coluna].qntVizinhos() == 0) {
         abreZeros(linha-1, coluna);  // Cima
         abreZeros(linha+1, coluna);  // Baixo
         abreZeros(linha, coluna-1);  // Esquerda
@@ -78,17 +78,17 @@ void Tabuleiro::abreZeros(int linha, int coluna) {
 void Tabuleiro::imprimir() {
     cout << "\n\n\t    ";
     for(int l = 0; l < 10; l++)
-        cout << " " << l << "  ";
+        cout << " " << l+1 << "  ";
     cout << "\n\t   -----------------------------------------\n";
 
     for(int l = 0; l < 10; l++) {
-        cout << "\t" << l << "  |";
+        cout << "\t" << l+1 << "  |";
         for(int c = 0; c < 10; c++) {
-            if(tabuleiro[l][c].estaAberta()) {
+            if(tabuleiro[l][c].taAberto()) {
                 if(tabuleiro[l][c].temBomba())
                     cout << " * ";
                 else
-                    cout << " " << tabuleiro[l][c].quantidadeVizinhos() << " ";
+                    cout << " " << tabuleiro[l][c].qntVizinhos() << " ";
             } else {
                 cout << "   ";
             }

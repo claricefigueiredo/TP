@@ -18,15 +18,15 @@ int Celula::qntVizinhos() {
 }
 
 
-bool Celula::colocaBomba() {
+void Celula::colocaBomba() {
     bomba = true;
 }
 
-bool Celula::abrir() {
+void Celula::abrir() {
     aberto = true;
 }
 
-int Celula::colocaVizinhos(int qntV) {
+void Celula::colocaVizinhos(int qntV) {
     vizinhos = qntV;
 }
 
