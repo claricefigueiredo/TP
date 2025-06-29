@@ -90,7 +90,7 @@ void Tabuleiro::imprimir() {
         for(int c = 0; c < 10; c++) {
             if(tabuleiro[l][c].taAberto()) {
                 if(tabuleiro[l][c].temBomba())
-                    cout << " * ";
+                    cout << " 💥 ";
                 else
                     cout << " " << tabuleiro[l][c].qntVizinhos() << " ";
             } else {
