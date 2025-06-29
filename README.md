@@ -14,8 +14,8 @@ Este projeto é uma implementação do jogo **Campo Minado**, desenvolvida em **
 1. Clone o repositório `git clone https://github.com/claricefigueiredo/TP.git`
 
 ## ☕ Como usar
-1. Compile o projeto `g++ main.cpp campoMinado.cpp -o campoMinado`
-2. Execute o jogo `./campoMinado`
+1. Compile o projeto `g++ main.cpp jogo.cpp tabuleiro.cpp Celula.cpp -o jogo`
+2. Execute o jogo `./jogo`
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
