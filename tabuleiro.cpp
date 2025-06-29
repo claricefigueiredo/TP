@@ -38,6 +38,10 @@ int Tabuleiro::contaBombaViz(int linha, int coluna) {
     if(coordenadaValida(linha+1, coluna) && tabuleiro[linha+1][coluna].temBomba()) quantidade++;
     if(coordenadaValida(linha, coluna+1) && tabuleiro[linha][coluna+1].temBomba()) quantidade++;
     if(coordenadaValida(linha, coluna-1) && tabuleiro[linha][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha-1, coluna-1) && tabuleiro[linha-1][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha-1, coluna+1) && tabuleiro[linha-1][coluna+1].temBomba()) quantidade++;
+    if(coordenadaValida(linha+1, coluna-1) && tabuleiro[linha+1][coluna-1].temBomba()) quantidade++;
+    if(coordenadaValida(linha+1, coluna+1) && tabuleiro[linha+1][coluna+1].temBomba()) quantidade++;
     return quantidade;
 }
 
@@ -86,7 +90,7 @@ void Tabuleiro::imprimir() {
         for(int c = 0; c < 10; c++) {
             if(tabuleiro[l][c].taAberto()) {
                 if(tabuleiro[l][c].temBomba())
-                    cout << " * ";
+                    cout << " 💥 ";
                 else
                     cout << " " << tabuleiro[l][c].qntVizinhos() << " ";
             } else {
