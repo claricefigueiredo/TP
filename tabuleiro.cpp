@@ -97,6 +97,8 @@ void Tabuleiro::imprimir() {
                     cout << " 💥 ";
                 else
                     cout << " " << tabuleiro[l][c].qntVizinhos() << " ";
+            } else if(tabuleiro[l][c].temBandeira()) {
+                cout << "🚩 ";
             } else {
                 cout << "   ";
             }
