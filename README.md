@@ -21,6 +21,7 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 ## 🎮 Como Jogar
 Inicialmente, digite 0 para colocar/remover bandeira ou 1 para abrir uma célula
+
 Digitando 1:
 - Insira as coordenadas da célula que você gostaria de revelar (no formato "linha coluna")
 - Caso apareça uma explosão (💥), você perdeu! Mas tem a chance de jogar novamente digitando 1 mais uma vez
