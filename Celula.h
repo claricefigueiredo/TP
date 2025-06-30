@@ -23,6 +23,8 @@ class Celula {
         void colocaBomba();
         //Abre a célula
         void abrir();
+        //Alterna a bandeira (adiciona/remove)
+        void alternaBandeira();
         //Insere a quantidade de vizinhos da célula
         void colocaVizinhos(int qntV);
 
