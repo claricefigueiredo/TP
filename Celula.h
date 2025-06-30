@@ -8,6 +8,7 @@ class Celula {
         bool bomba;
         bool aberto;
         int vizinhos;
+        bool bandeira;
     public:
         //Cria uma célula sem bombas, fechada e com 0 vizinhos
         Celula();
@@ -16,6 +17,8 @@ class Celula {
         bool temBomba();
         //REtorna se a célula já foi aberta
         bool taAberto();
+        //Retorna se a célula tem bandeira
+        bool temBandeira();
         //Retorna a quantidade de vizinhos
         int qntVizinhos();
 
