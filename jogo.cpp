@@ -47,7 +47,6 @@ int Jogo::Venceu(){
             tabuleiro.abreZeros(linha-1, coluna-1);
         }
 
-       tabuleiro.acessaCelula(linha-1, coluna-1).abrir();
        if (tabuleiro.acessaCelula(linha - 1, coluna - 1).temBomba()) {
             perdeu = true;
         }
