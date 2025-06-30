@@ -32,7 +32,7 @@ Digitando 0:
 - Insira as coordenadas da célula que você gostaria de adicionar uma bandeira (no formato "linha coluna")
 - Caso essa coordenada já possua uma bandeira, ela será removida
   
-O jogo termina quando as células restantes não reveladas forem todas bombas
+Você será vitorioso quando as células restantes não reveladas forem todas bombas
 
 ## 📫 Como contribuir
 1. Bifurque este repositório.
