@@ -26,6 +26,10 @@ void Celula::abrir() {
     aberto = true;
 }
 
+void Celula::alternaBandeira() {
+    bandeira = !bandeira;
+}
+
 void Celula::colocaVizinhos(int qntV) {
     vizinhos = qntV;
 }
