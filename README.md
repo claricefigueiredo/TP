@@ -20,11 +20,18 @@ Este projeto é uma implementação do jogo **Campo Minado**, desenvolvida em **
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## 🎮 Como Jogar
+Inicialmente, digite 0 para colocar/remover bandeira ou 1 para abrir uma célula
+Digitando 1:
 - Insira as coordenadas da célula que você gostaria de revelar (no formato "linha coluna")
-- Caso apareça uma explosão (💥), você perdeu! Mas tem a chance de jogar novamente digitando 1
+- Caso apareça uma explosão (💥), você perdeu! Mas tem a chance de jogar novamente digitando 1 mais uma vez
 - Caso apareça um número, significa que a célula está vazia
 - Cada número indica quantas minas estão ao redor - cima, baixo, direita, esquerda e diagonais imediatas - do bloco que contém o valor
-- O jogo termina quando não houverem mais células vazias
+  
+Digitando 0:
+- Insira as coordenadas da célula que você gostaria de adicionar uma bandeira (no formato "linha coluna")
+- Caso essa coordenada já possua uma bandeira, ela será removida
+  
+O jogo termina quando as células restantes não reveladas forem todas bombas
 
 ## 📫 Como contribuir
 1. Bifurque este repositório.
